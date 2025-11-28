@@ -1,0 +1,15 @@
+[config]
+version_check = false
+caching = true
+
+
+
+[templates.foot]
+input_path = "./templates/foot-colors.ini"
+output_path = "~/.config/foot/foot-colors.ini"
+
+[templates.ghostty]
+input_path = './templates/ghostty-colors'
+output_path = '~/.config/ghostty/themes/Matugen'
+post_hook = 'pkill -SIGUSR2 ghostty'
+
