@@ -22,6 +22,7 @@ input {
 
     focus-follows-mouse max-scroll-amount="40%"
     workspace-auto-back-and-forth
+    warp-mouse-to-focus
 
 }
 
@@ -349,5 +350,8 @@ binds {
     Mod+Shift+P { power-off-monitors; }
 
     Mod+Shift+W hotkey-overlay-title="Change Wallpaper" { spawn "~/.config/niri/scripts/changeWallpaper.sh"; }
-
+    
+    Mod+B { spawn "~/.config/niri/scripts/blueLightFilter.sh";}
+    
+    Mod+Alt+C hotkey-overlay-title="Show clipboard history" { spawn-sh "cliphist list | rofi -dmenu -display-columns 2 | cliphist decode | wl-copy"; }
 }

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+CACHE_WALL="$HOME/.cache/current_wallpaper"
 
 if [ ! -d "$WALLPAPER_DIR" ]; then
     rofi -e "No such directory: $WALLPAPER_DIR"
@@ -25,10 +26,14 @@ if [ -z "$MODE" ]; then
     exit 1
 fi
 
-ln -sf "$FULL_PATH" ~/.cache/current_wallpaper
+if [ -f "$CACHE_WALL" ] && [ "$(readlink -f "$CACHE_WALL")" = "$(readlink -f "$FULL_PATH")" ]; then
+    matugen image "$FULL_PATH" --mode "$MODE" --json hex
+    exit 0
+fi
+
+ln -sf "$FULL_PATH" "$CACHE_WALL"
 
 matugen image "$FULL_PATH" --mode "$MODE" --json hex
 
-# Apply wallpaper using swaybg
 killall swaybg 2>/dev/null
-swaybg -i ~/.cache/current_wallpaper >/dev/null 2>&1 &
+swaybg -i "$CACHE_WALL" >/dev/null 2>&1 &
