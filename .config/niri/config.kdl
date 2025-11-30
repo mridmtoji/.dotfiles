@@ -90,6 +90,9 @@ layout {
 }
 
 spawn-at-startup "sunsetr"
+spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
+spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+
 spawn-sh-at-startup "swaybg -i ~/.cache/current_wallpaper >/dev/null 2>&1 &"
 
 hotkey-overlay {
