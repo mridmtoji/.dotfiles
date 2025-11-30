@@ -359,7 +359,7 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-    Mod+Shift+W hotkey-overlay-title="Change Wallpaper" { spawn "~/.config/niri/scripts/changeWallpaper.sh"; }
+    Alt+W hotkey-overlay-title="Change Wallpaper" { spawn "~/.config/niri/scripts/changeWallpaper.sh"; }
     
     Mod+B { spawn "~/.config/niri/scripts/blueLightFilter.sh";}
     
