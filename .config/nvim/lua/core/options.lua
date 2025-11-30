@@ -31,7 +31,7 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 vim.opt.showmode = false
-vim.opt.showmatch = true
+-- vim.opt.showmatch = true
 
 vim.opt.updatetime = 100
 

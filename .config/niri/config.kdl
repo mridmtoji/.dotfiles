@@ -108,6 +108,13 @@ animations {
     // off
 }
 
+environment {
+    QT_QPA_PLATFORM "wayland"
+    ELECTRON_ENABLE_WAYLAND "1"
+    ELECTRON_OZONE_PLATFORM_HINT "wayland"
+    DISPLAY null
+}
+
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
