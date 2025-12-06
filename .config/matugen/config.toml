@@ -13,3 +13,6 @@ input_path = './templates/ghostty-colors'
 output_path = '~/.config/ghostty/themes/Matugen'
 post_hook = 'pkill -SIGUSR2 ghostty'
 
+[templates.yazi]
+input_path = './templates/yazi-colors.toml'
+output_path = '~/.config/yazi/theme.toml'
