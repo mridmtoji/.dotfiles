@@ -92,6 +92,8 @@ layout {
 spawn-at-startup "sunsetr"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
+spawn-at-startup "elephant"
+spawn-at-startup "walker --gapplication-service"
 
 spawn-sh-at-startup "swaybg -i ~/.cache/current_wallpaper >/dev/null 2>&1 &"
 
@@ -140,7 +142,7 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Mod+Space hotkey-overlay-title="Run an Application: Rofi" { spawn "rofi" "-show" "run"; }
+    Mod+Space hotkey-overlay-title="Run an Application: Rofi" { spawn "walker"; }
 
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
