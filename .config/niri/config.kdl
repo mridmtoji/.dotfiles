@@ -81,12 +81,12 @@ layout {
         color "#0007"
     }
 
-    struts {
-        left 8
-        right 8
-        top 8
-        bottom 8
-    }
+    // struts {
+    //     left 8
+    //     right 8
+    //     top 8
+    //     bottom 8
+    // }
 }
 
 spawn-at-startup "sunsetr"
@@ -303,4 +303,6 @@ binds {
     Mod+B { spawn "~/.config/niri/scripts/blueLightFilter.sh";}
     
     Mod+Alt+C hotkey-overlay-title="Show clipboard history" { spawn-sh "cliphist list | walker --dmenu | cliphist decode | wl-copy"; }
+
+    Mod+E { spawn-sh "foot yazi"; }
 }
