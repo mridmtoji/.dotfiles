@@ -95,6 +95,7 @@ spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
 spawn-at-startup "elephant"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "qs"
+spawn-at-startup "fcitx5 &"
 
 spawn-sh-at-startup "swaybg -i ~/.cache/current_wallpaper >/dev/null 2>&1 &"
 
@@ -302,7 +303,7 @@ binds {
     
     Mod+B { spawn "~/.config/niri/scripts/blueLightFilter.sh";}
     
-    Mod+Alt+C hotkey-overlay-title="Show clipboard history" { spawn-sh "cliphist list | walker --dmenu | cliphist decode | wl-copy"; }
+    Mod+X hotkey-overlay-title="Show clipboard history" { spawn-sh "cliphist list | walker --dmenu | cliphist decode | wl-copy"; }
 
     Mod+E { spawn-sh "foot yazi"; }
 }
