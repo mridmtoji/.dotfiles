@@ -1,11 +1,11 @@
 [opener]
-# Define swayimg opener
 swayimg = [
   { run = 'swayimg "$@"', orphan = true, desc = "Open with swayimg", for = "unix" }
 ]
 
 [open]
-# Tell Yazi to use swayimg for image files
 rules = [
-  { mime = "image/*", use = "swayimg" }
+  { mime = "image/*", use = "swayimg" },
 ]
+
+
