@@ -62,9 +62,10 @@ Scope {
 					Text {
 						Layout.preferredWidth: 25
 						Layout.preferredHeight: 25
-						text: "\uf028"
+						// text: "\uf028"
+						text: "󰕾"
 						font.family: "FontAwesome"
-						font.pixelSize: 20
+						font.pixelSize: 25
 						color: "white"
 						horizontalAlignment: Text.AlignHCenter
 						verticalAlignment: Text.AlignVCenter
