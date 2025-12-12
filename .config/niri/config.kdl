@@ -96,6 +96,7 @@ spawn-at-startup "elephant"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "qs"
 spawn-at-startup "fcitx5 &"
+spawn-sh-at-startup "chromium chat.zalo.me"
 
 spawn-sh-at-startup "swaybg -i ~/.cache/current_wallpaper >/dev/null 2>&1 &"
 
@@ -121,6 +122,24 @@ environment {
     ELECTRON_OZONE_PLATFORM_HINT "wayland"
     DISPLAY null
     ICON_THEME "Tela-circle"
+
+    QT_QPA_PLATFORM "wayland"
+    GDK_BACKEND "wayland"
+    SDL_VIDEODRIVER "wayland"
+    CLUTTER_BACKEND "wayland"
+    
+    // Chromium/Electron apps
+    CHROMIUM_FLAGS "--enable-features=UseOzonePlatform --ozone-platform=wayland"
+    ELECTRON_OZONE_PLATFORM_HINT "wayland"
+    
+    // Firefox
+    MOZ_ENABLE_WAYLAND "1"
+    
+    // Java applications
+    _JAVA_AWT_WM_NONREPARENTING "1"
+    
+    // XWayland fallback (for apps that don't support Wayland)
+    DISPLAY ":0"
 }
 
 window-rule {
