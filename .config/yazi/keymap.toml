@@ -1,0 +1,5 @@
+[[mgr.prepend_keymap]]
+on = [ "e", "z" ]
+run = 'shell "unzip $@" --confirm'
+desc = "Extract zip files"
+

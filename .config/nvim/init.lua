@@ -23,4 +23,4 @@ require("lazy").setup({
 	{ import = "plugins" },
 })
 
-vim.lsp.enable({'clangd', 'qmlls', 'lua', 'pyright'})
+vim.lsp.enable({'clangd', 'qmlls', 'lua', 'pyright', 'sqls'})

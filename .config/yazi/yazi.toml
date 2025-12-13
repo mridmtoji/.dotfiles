@@ -1,11 +1,15 @@
 [opener]
 swayimg = [
-  { run = 'swayimg "$@"', orphan = true, desc = "Open with swayimg", for = "unix" }
+    { run = 'swayimg "$@"', orphan = true, desc = "Open with swayimg", for = "unix" }
+]
+edit = [
+    { run = 'nvim "$@"', block = true, desc = "Open with Neovim", for = "unix" }
 ]
 
 [open]
 rules = [
-  { mime = "image/*", use = "swayimg" },
+    { mime = "image/*", use = "swayimg" },
+    { mime = "text/*", use = "edit" },
 ]
 
 
