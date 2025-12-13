@@ -1,5 +1,5 @@
 vim.opt.cursorline = true
-vim.opt.cursorlineopt = "number"
+-- vim.opt.cursorlineopt = "number"
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -103,3 +103,4 @@ vim.opt.clipboard:append("unnamedplus")
 vim.opt.signcolumn = "yes" 
 vim.opt.termguicolors = true
 vim.opt.isfname:append("@-@")
+
