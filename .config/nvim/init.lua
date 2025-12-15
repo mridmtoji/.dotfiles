@@ -2,7 +2,6 @@ require("core.options")
 require("core.keymaps")
 require("core.autocmds")
 
-
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = "https://github.com/folke/lazy.nvim.git"
@@ -20,7 +19,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ import = "plugins" },
+  { import = "plugins" },
 })
 
-vim.lsp.enable({'clangd', 'qmlls', 'lua', 'pyright', 'sqls'})
+vim.lsp.enable({'clangd', 'qmlls', 'lua_ls', 'pyright', 'sqls'})
+
