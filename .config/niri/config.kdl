@@ -100,6 +100,8 @@ spawn-sh-at-startup "chromium chat.zalo.me"
 
 spawn-sh-at-startup "swaybg -i ~/.cache/current_wallpaper >/dev/null 2>&1 &"
 
+spawn-sh-at-startup "vicinae server"
+
 hotkey-overlay {
     skip-at-startup
 }
@@ -142,6 +144,11 @@ environment {
     DISPLAY ":0"
 }
 
+debug {
+
+    honor-xdg-activation-with-invalid-serial
+}
+
 window-rule {
     match app-id=r#"firefox$"# title="^Picture-in-Picture$"
     open-floating true
@@ -169,7 +176,8 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     Mod+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; }
-    Mod+Space hotkey-overlay-title="Run an Application: Rofi" { spawn "walker"; }
+    Mod+Space hotkey-overlay-title="Run Application Launcher" repeat=false { spawn "vicinae" "toggle"; }
+
 
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
