@@ -3,7 +3,7 @@ WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
 CACHE_WALL="$HOME/.cache/current_wallpaper"
 
 SELECTED=$(find "$WALLPAPER_DIR" -type f \( -iname '*.jpg' -o -iname '*.png' -o -iname '*.jpeg' -o -iname '*.gif' -o -iname '*.mp4' \) \
-  | walker --dmenu "Choose wallpaper:")
+  | vicinae dmenu -p "Choose wallpaper:")
 
 [ -z "$SELECTED" ] && exit 0
 
@@ -17,7 +17,7 @@ if [ "$EXT_LOWER" = "mp4" ]; then
   
   ln -sf "$SELECTED" "$CACHE_WALL"
 else
-  MODE=$(printf "light\ndark\n" | walker --dmenu "Matugen mode:")
+  MODE=$(printf "light\ndark\n" | vicinae dmenu -p "Mode:")
   [ -z "$MODE" ] && exit 0
   
   ln -sf "$SELECTED" "$CACHE_WALL"

@@ -7,14 +7,19 @@ import Quickshell.Widgets
 Scope {
 	id: root
 	
+	readonly property real maxVolume: 1.0
+	
 	// Bind the pipewire node so its volume will be tracked
 	PwObjectTracker {
 		objects: [ Pipewire.defaultAudioSink ]
 	}
 	
 	Connections {
-		target: Pipewire.defaultAudioSink?.audio
+		target: Pipewire.defaultAudioSink?.audio ?? null
 		function onVolumeChanged() {
+			if (Pipewire.defaultAudioSink?.audio.volume > 1.0) {
+				Pipewire.defaultAudioSink.audio.volume = 1.0;
+			}
 			root.shouldShowOsd = true;
 			hideTimer.restart();
 		}
@@ -62,7 +67,6 @@ Scope {
 					Text {
 						Layout.preferredWidth: 25
 						Layout.preferredHeight: 25
-						// text: "\uf028"
 						text: "󰕾"
 						font.family: "FontAwesome"
 						font.pixelSize: 25
@@ -77,6 +81,7 @@ Scope {
 						implicitHeight: 10
 						radius: 20
 						color: "#50ffffff"
+						clip: true  // CRITICAL: Prevents overflow
 						
 						Rectangle {
 							anchors {
@@ -85,10 +90,29 @@ Scope {
 								bottom: parent.bottom
 							}
 							
-							implicitWidth: parent.width * (Pipewire.defaultAudioSink?.audio.volume ?? 0)
+							// Scale based on maxVolume (e.g., at 150% volume and 200% max = 75% bar)
+							width: parent.width * Math.min(1.0, (Pipewire.defaultAudioSink?.audio.volume ?? 0) / root.maxVolume)
 							radius: parent.radius
 							color: "#5A9BCF"
+							
+							Behavior on width {
+								NumberAnimation {
+									duration: 100
+									easing.type: Easing.OutQuad
+								}
+							}
 						}
+					}
+					
+					// Volume percentage display
+					Text {
+						Layout.preferredWidth: 50
+						text: Math.round((Pipewire.defaultAudioSink?.audio.volume ?? 0) * 100) + "%"
+						font.family: "SpaceMono Nerd Font Mono"
+						font.pixelSize: 16
+						color: "white"
+						horizontalAlignment: Text.AlignRight
+						verticalAlignment: Text.AlignVCenter
 					}
 				}
 			}

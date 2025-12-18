@@ -19,7 +19,7 @@ if [ -z "$PRESETS" ]; then
     exit 1
 fi
 
-CHOSEN=$(echo "$MENU" | walker --dmenu | sed 's/^  //')
+CHOSEN=$(echo "$MENU" | vicinae dmenu | sed 's/^  //')
 
 [ -z "$CHOSEN" ] && exit 0
 

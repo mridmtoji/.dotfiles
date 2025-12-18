@@ -73,7 +73,8 @@ Row {
                     anchors.horizontalCenter: parent.horizontalCenter
                     text: workspaceName !== "" ? workspaceName : workspaceIdx
                     color: isFocused ? "#1D1E27" : "#eceff4"
-                    font.pixelSize: 13
+                    font.family: "SpaceMono Nerd Font Mono"
+                    font.pixelSize: 14
                     font.weight: isFocused ? Font.Bold : Font.Medium
                     
                     Behavior on font.weight {

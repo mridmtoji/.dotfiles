@@ -181,8 +181,8 @@ binds {
 
     Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
-    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+"; }
-    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05-"; }
     XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
     XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
 
@@ -336,7 +336,7 @@ binds {
     
     Mod+B { spawn "~/.config/niri/scripts/blueLightFilter.sh";}
     
-    Mod+X hotkey-overlay-title="Show clipboard history" { spawn-sh "cliphist list | walker --dmenu | cliphist decode | wl-copy"; }
+    Mod+X hotkey-overlay-title="Show clipboard history" { spawn-sh "cliphist list | vicinae dmenu --no-quick-look | cliphist decode | wl-copy"; }
 
     Mod+E { spawn-sh "foot yazi"; }
 }
