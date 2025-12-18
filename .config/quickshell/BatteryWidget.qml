@@ -76,7 +76,7 @@ Rectangle {
         Text {
             anchors.verticalCenter: parent.verticalCenter
             color: root.batteryColor
-            font.family: "Maple Mono NF"
+            font.family: "SpaceMono Nerd Font"
             font.pixelSize: 16
             font.weight: Font.Medium
             text: Math.round(batPercentage * 100) + "%"

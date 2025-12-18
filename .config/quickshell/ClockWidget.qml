@@ -15,7 +15,7 @@ Rectangle {
         anchors.centerIn: parent
         
         color: "#D1D2E8"
-        font.family: "Maple Mono NF"
+        font.family: "SpaceMono Nerd Font Mono"
         font.pixelSize: 16
         font.weight: Font.Medium
         
