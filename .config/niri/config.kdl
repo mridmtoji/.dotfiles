@@ -108,6 +108,11 @@ hotkey-overlay {
 
 prefer-no-csd
 
+cursor {
+    xcursor-theme "Afterglow-cursors"
+    xcursor-size 30
+}
+
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
 
 overview {
