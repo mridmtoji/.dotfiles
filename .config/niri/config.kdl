@@ -344,4 +344,6 @@ binds {
     Mod+X hotkey-overlay-title="Show clipboard history" { spawn-sh "cliphist list | vicinae dmenu --no-quick-look | cliphist decode | wl-copy"; }
 
     Mod+E { spawn-sh "foot yazi"; }
+
+    Mod+Alt+R {spawn-sh "foot ~/.config/niri/scripts/recording.sh"; }
 }
