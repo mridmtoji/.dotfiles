@@ -92,7 +92,6 @@ layout {
 spawn-at-startup "sunsetr"
 spawn-at-startup "wl-paste" "--type" "text" "--watch" "cliphist" "store"
 spawn-at-startup "wl-paste" "--type" "image" "--watch" "cliphist" "store"
-spawn-at-startup "elephant"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "qs"
 spawn-at-startup "fcitx5 &"
@@ -125,28 +124,21 @@ animations {
 
 environment {
     QT_QPA_PLATFORM "wayland"
-    ELECTRON_ENABLE_WAYLAND "1"
-    ELECTRON_OZONE_PLATFORM_HINT "wayland"
-    DISPLAY null
-    ICON_THEME "Tela-circle"
-
-    QT_QPA_PLATFORM "wayland"
     GDK_BACKEND "wayland"
     SDL_VIDEODRIVER "wayland"
     CLUTTER_BACKEND "wayland"
-    
-    // Chromium/Electron apps
-    CHROMIUM_FLAGS "--enable-features=UseOzonePlatform --ozone-platform=wayland"
+
+    ELECTRON_ENABLE_WAYLAND "1"
     ELECTRON_OZONE_PLATFORM_HINT "wayland"
-    
-    // Firefox
+    CHROMIUM_FLAGS "--enable-features=UseOzonePlatform --ozone-platform=wayland"
+
     MOZ_ENABLE_WAYLAND "1"
-    
-    // Java applications
+
     _JAVA_AWT_WM_NONREPARENTING "1"
-    
-    // XWayland fallback (for apps that don't support Wayland)
-    DISPLAY ":0"
+
+    ICON_THEME "Tela-circle"
+
+    DISPLAY null
 }
 
 debug {
