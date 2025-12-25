@@ -108,8 +108,8 @@ hotkey-overlay {
 prefer-no-csd
 
 cursor {
-    xcursor-theme "Afterglow-cursors"
-    xcursor-size 20
+    xcursor-theme "GoogleDot-White"
+    xcursor-size 25
 }
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"

@@ -25,5 +25,5 @@ else
   
   pkill mpvpaper 2>/dev/null
   
-  awww img "$CACHE_WALL" &
+  awww img --transition-duration 1 "$CACHE_WALL" &
 fi
