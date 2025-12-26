@@ -108,7 +108,7 @@ hotkey-overlay {
 prefer-no-csd
 
 cursor {
-    xcursor-theme "GoogleDot-White"
+    xcursor-theme "GoogleDot-Blue"
     xcursor-size 25
 }
 
